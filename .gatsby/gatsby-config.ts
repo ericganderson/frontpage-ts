@@ -27,6 +27,38 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/../content`,
+      },
+    },
+    {
+      // file system route api tut: https://www.youtube.com/watch?v=zqfBNgV-R6w
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        // gatsbyRemarkPlugins: [
+        //   `gatsby-remark-autolink-headers`,
+        //   `gatsby-remark-copy-linked-files`,
+        //   `gatsby-remark-smartypants`,
+        //   {
+        //     resolve: `gatsby-remark-images`,
+        //     options: {
+        //       maxWidth: 1200,
+        //     },
+        //   },
+        //   {
+        //     resolve: `gatsby-remark-external-links`,
+        //     options: {
+        //       target: `_blank`,
+        //       rel: `noopener`,
+        //     },
+        //   },
+        // ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
