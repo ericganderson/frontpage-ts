@@ -1,11 +1,17 @@
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import React from 'react'
 import SEO from 'react-seo-component'
 import Image from '../components/image'
 import { H1, P } from '../components/page-elements'
 import { useSiteMetadata } from '../hooks/use-site-metadata'
 
-export default () => {
+export default ({data}: any) => {
+
+  const posts = data.allMdx.nodes
+  console.log('=====================')
+  console.log(posts)
+  console.log('=====================')
+  
   const {
     title,
     description,
@@ -29,6 +35,11 @@ export default () => {
       />
       <H1>Hi people</H1>
       <P>Welcome to your new Gatsby site.</P>
+      {posts && posts.map((post: any) => {return <P>
+        <Link to={post.slug}>
+        {post.frontmatter.title}
+        </Link>
+        </P>})}
       <P>Now go build something great.</P>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
         <Image />
@@ -37,3 +48,18 @@ export default () => {
     </>
   )
 }
+
+export const query = graphql`
+{
+  allMdx {
+    nodes {
+      id
+      slug
+      frontmatter {
+        date
+        title
+      }
+    }
+  }
+}
+`

@@ -3,13 +3,11 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 
 export default function PostPage({data}: any) {
-  console.log('=====================')
-  console.log(data)
-  console.log('=====================')
+  const {body} = data.mdx
   
   return (
     <>
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      <MDXRenderer>{body}</MDXRenderer>
     </>
   )
 }
