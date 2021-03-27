@@ -1,9 +1,12 @@
-import { graphql, Link } from 'gatsby'
-import React from 'react'
-import SEO from 'react-seo-component'
-import Image from '../components/image'
-import { H1, P } from '../components/page-elements'
-import { useSiteMetadata } from '../hooks/use-site-metadata'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { graphql, Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import SEO from 'react-seo-component';
+import { H1, P } from '../components/page-elements';
+import { useSiteMetadata } from '../hooks/use-site-metadata';
+
 
 export default ({data}: any) => {
 
@@ -22,7 +25,7 @@ export default ({data}: any) => {
     twitterUsername,
   } = useSiteMetadata()
   return (
-    <>
+    <Container>
       <SEO
         title={`Home`}
         titleTemplate={title}
@@ -42,10 +45,16 @@ export default ({data}: any) => {
         </P>})}
       <P>Now go build something great.</P>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
+      <StaticImage
+      src="../images/gatsby-astronaut.png"
+      width={300}
+      quality={95}
+      // formats={["AUTO", "WEBP", "AVIF"]}
+      alt="A Gatsby astronaut"
+      style={{ marginBottom: `1.45rem` }}
+    />      </div>
       <Link to="/page-2/">Go to page 2</Link>
-    </>
+    </Container>
   )
 }
 
