@@ -41,18 +41,19 @@ export default ({data}: any) => {
       {posts && posts.map((post: any) => {return <P>
         <Link to={post.slug}>
         {post.frontmatter.title}
-        </Link>
-        </P>})}
+        </Link></P>}
+       )}
       <P>Now go build something great.</P>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      // formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />      </div>
+        <StaticImage
+          src="../images/gatsby-astronaut.png"
+          width={300}
+          quality={95}
+          // formats={["AUTO", "WEBP", "AVIF"]}
+          alt="A Gatsby astronaut"
+          style={{ marginBottom: `1.45rem` }}
+        />      
+      </div>
       <Link to="/page-2/">Go to page 2</Link>
     </Container>
   )

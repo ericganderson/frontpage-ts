@@ -1,7 +1,7 @@
 const siteMetadata = {
-  title: `Gatsby TypeScript starter`,
-  description: `Gatsby TypeScript starter with styled-components. Built with the Gatsby default starter.`,
-  authorName: `Scott Spence`,
+  title: `Eric G Anderson`,
+  description: `Eric's frontpage for blog, active projects, and contact info.`,
+  authorName: `Eric G Anderson`,
   image: `/gatsby-astronaut.png`,
   siteUrl: `https://testurl.com`,
   siteLanguage: `en-GB`,
